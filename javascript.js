@@ -41,6 +41,7 @@ function getHumanChoice() {
 function playGame(rounds = 5) {
     let computerScore = 0;
     let humanScore = 0;
+    let roundNum = 0;
 
     function playRound() {
         let humanChoice;
@@ -56,31 +57,59 @@ function playGame(rounds = 5) {
 
                 // display div
                 const divRead = document.querySelector(".result");
-                const divNewHuman = document.createElement("h5");
-                const divNewComputer = document.createElement("h5");
+                const divNewHuman = document.createElement("p");
+                const divNewComputer = document.createElement("p");
                 divNewHuman.textContent = `Your Choice: ${humanChoice.toUpperCase()}`;
                 divNewComputer.textContent = `Computer Choice: ${computerChoice.toUpperCase()}`;
                 divRead.appendChild(divNewHuman);
                 divRead.appendChild(divNewComputer);
 
+                const divScore = document.createElement("p");
+                divRead.appendChild(divScore);
+
 
                 if (humanChoice == computerChoice){
                     console.log("Tie!");
+                    divScore.textContent = `Tie! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
                 } else if ((humanChoice == "rock") && (computerChoice == "paper")) {
 
                     computerScore += 1;
+                    divScore.textContent = `You lose! Paper wraps Rock! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
                     console.log("You lose! Paper wraps Rock.");
                 } else if ((humanChoice == "paper") && (computerChoice == "scissors")) {
         
                     computerScore += 1;
+                    divScore.textContent = `You lose! Scissors cut Paper! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
                     console.log("You lose! Scissors cut Paper.");
                 } else if ((humanChoice == "scissors") && (computerChoice == "rock")) {
         
                     computerScore += 1;
+                    divScore.textContent = `You lose! Rock beats Scissors! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
                     console.log("You lose! Rock beats Scissors.");
                 } else {
                     humanScore += 1;
+                    divScore.textContent = `You win! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
                     console.log("You win!");
+                }
+
+                roundNum += 1;
+                if ((humanScore == 5) || (computerScore == 5)){
+                    if(humanScore>computerScore){
+                        const divResult = document.createElement("h1");
+                        divResult.textContent = `You win!`;
+                        
+                        divRead.appendChild(divResult);
+                    } else if (computerScore>humanScore){
+                        const divResult = document.createElement("h1");
+                        divResult.textContent = `You Lose!`;
+                        
+                        divRead.appendChild(divResult);
+                    } else {
+                        const divResult = document.createElement("h1");
+                        divResult.textContent = `Tie!`;
+                        
+                        divRead.appendChild(divResult);
+                    }
                 }
                 
             }
