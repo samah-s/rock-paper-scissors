@@ -56,7 +56,8 @@ function playGame(rounds = 5) {
                 let computerChoice = getComputerChoice();
 
                 // display div
-                const divRead = document.querySelector(".result");
+                const divOuter = document.querySelector(".result");
+                const divRead = document.createElement("div");
                 const divNewHuman = document.createElement("p");
                 const divNewComputer = document.createElement("p");
                 divNewHuman.textContent = `Your Choice: ${humanChoice.toUpperCase()}`;
@@ -92,23 +93,25 @@ function playGame(rounds = 5) {
                     console.log("You win!");
                 }
 
+                divOuter.appendChild(divRead);
+
                 roundNum += 1;
                 if ((humanScore == 5) || (computerScore == 5)){
                     if(humanScore>computerScore){
                         const divResult = document.createElement("h1");
                         divResult.textContent = `You win!`;
                         
-                        divRead.appendChild(divResult);
+                        divOuter.appendChild(divResult);
                     } else if (computerScore>humanScore){
                         const divResult = document.createElement("h1");
                         divResult.textContent = `You Lose!`;
                         
-                        divRead.appendChild(divResult);
+                        divOuter.appendChild(divResult);
                     } else {
                         const divResult = document.createElement("h1");
                         divResult.textContent = `Tie!`;
                         
-                        divRead.appendChild(divResult);
+                        divOuter.appendChild(divResult);
                     }
                 }
                 

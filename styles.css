@@ -1,4 +1,26 @@
-div div{
-    border: 2px;
+.result{
+    
+    margin: 32px;
+}
+
+.result > div{
     background-color: lightblue;
+    border: 2px;
+    
+    padding: 16px;
+    margin: 10px;
+}
+
+button{
+    background-color: lightgrey;
+    width: 100px;
+    height: 30px;
+}
+
+#buttons{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 32px;
+
 }
