@@ -93,26 +93,31 @@ function playGame(rounds = 5) {
                     console.log("You win!");
                 }
 
-                divOuter.appendChild(divRead);
+                // divOuter.appendChild(divRead);
+                divOuter.insertBefore(divRead, divOuter.firstChild);
 
                 roundNum += 1;
                 if ((humanScore == 5) || (computerScore == 5)){
+                    const divResult = document.createElement("h1");
                     if(humanScore>computerScore){
-                        const divResult = document.createElement("h1");
+                        
                         divResult.textContent = `You win!`;
                         
-                        divOuter.appendChild(divResult);
+                        
+                        
                     } else if (computerScore>humanScore){
-                        const divResult = document.createElement("h1");
+                        
                         divResult.textContent = `You Lose!`;
                         
-                        divOuter.appendChild(divResult);
+                        
                     } else {
-                        const divResult = document.createElement("h1");
+                        
                         divResult.textContent = `Tie!`;
                         
-                        divOuter.appendChild(divResult);
+                        
                     }
+                    divOuter.insertBefore(divResult, divOuter.firstChild);
+                    
                 }
                 
             }
