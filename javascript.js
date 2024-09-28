@@ -71,25 +71,25 @@ function playGame(rounds = 5) {
 
                 if (humanChoice == computerChoice){
                     console.log("Tie!");
-                    divScore.textContent = `Tie! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
+                    divScore.textContent = `Tie! Your Score: ${humanScore};    Computer Score: ${computerScore}`;
                 } else if ((humanChoice == "rock") && (computerChoice == "paper")) {
 
                     computerScore += 1;
-                    divScore.textContent = `You lose! Paper wraps Rock! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
+                    divScore.textContent = `You lose! Paper wraps Rock! Your Score: ${humanScore};    Computer Score: ${computerScore}`;
                     console.log("You lose! Paper wraps Rock.");
                 } else if ((humanChoice == "paper") && (computerChoice == "scissors")) {
         
                     computerScore += 1;
-                    divScore.textContent = `You lose! Scissors cut Paper! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
+                    divScore.textContent = `You lose! Scissors cut Paper! Your Score: ${humanScore};    Computer Score: ${computerScore}`;
                     console.log("You lose! Scissors cut Paper.");
                 } else if ((humanChoice == "scissors") && (computerChoice == "rock")) {
         
                     computerScore += 1;
-                    divScore.textContent = `You lose! Rock beats Scissors! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
+                    divScore.textContent = `You lose! Rock beats Scissors! Your Score: ${humanScore};    Computer Score: ${computerScore}`;
                     console.log("You lose! Rock beats Scissors.");
                 } else {
                     humanScore += 1;
-                    divScore.textContent = `You win! Your Score: ${humanScore}    Computer Score: ${computerScore}`;
+                    divScore.textContent = `You win! Your Score: ${humanScore};    Computer Score: ${computerScore}`;
                     console.log("You win!");
                 }
 
@@ -117,7 +117,7 @@ function playGame(rounds = 5) {
                         
                     }
                     divOuter.insertBefore(divResult, divOuter.firstChild);
-                    
+
                 }
                 
             }

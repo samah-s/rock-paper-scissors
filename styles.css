@@ -29,3 +29,9 @@ button{
     margin-top: 32px;
 
 }
+
+#heading{
+    text-align: center;
+    background-color: lightgray;
+    padding: 32px;
+}
